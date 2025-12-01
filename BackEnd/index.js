@@ -1,3 +1,5 @@
+// RENDER DEBUG CHECK IMAGE FIX
+
 require ("dotenv").config();
 const express = require("express");
 //const mongoose = require ("mongoose");
