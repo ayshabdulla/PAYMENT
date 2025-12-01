@@ -25,7 +25,7 @@ const AdminLogin =() => {
 
         try {
             //Send login data to backend
-            const res = await axios.post('http://localhost:5000/api/admin/login', form);
+            const res = await axios.post('https://payment-gpz6.onrender.com/api/admin/login', form);
 
             //if login successfull (backend sends token)
             if (res.data.token) {

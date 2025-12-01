@@ -16,7 +16,7 @@ const ProductList = () => {
   const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('https://payment-gpz6.onrender.com/api/products')
       .then(res => setProducts(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -31,7 +31,7 @@ const ProductList = () => {
             className="product-card">
             {prod.image && (
               <img
-                src={`http://localhost:5000${prod.image}`}
+                src={`https://payment-gpz6.onrender.com${prod.image}`}
                 alt={prod.name}
               />
             )}

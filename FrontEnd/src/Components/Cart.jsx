@@ -30,7 +30,7 @@ const Cart = () => {
           quantity: 1,
         }));
 
-        const response = await axios.post('http://localhost:5000/api/payment/checkout', {
+        const response = await axios.post('https://payment-gpz6.onrender.com/api/payment/checkout', {
           cartItems,
         });
         window.location.href = response.data.url;
@@ -66,7 +66,7 @@ const Cart = () => {
           <div key={idx} className="cart-card">
             {item.image && (
               <img
-                src={`http://localhost:5000${item.image}`}
+                src={`https://payment-gpz6.onrender.com${item.image}`}
                 alt={item.name}
               />
             )}

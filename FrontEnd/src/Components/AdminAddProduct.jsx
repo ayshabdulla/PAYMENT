@@ -19,7 +19,7 @@ const AdminAddProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/products');
+        const res = await axios.get('https://payment-gpz6.onrender.com/api/products');
         setProducts(res.data); // Update products with the data from backend
       } catch (err) {
         console.error(err);
@@ -53,7 +53,7 @@ const AdminAddProduct = () => {
 
     try {
       // Send the new product data to the backend
-      const res = await axios.post('http://localhost:5000/api/products/add', formData, {
+      const res = await axios.post('https://payment-gpz6.onrender.com/api/products/add', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -63,7 +63,7 @@ const AdminAddProduct = () => {
       setImageFile(null);
 
       // Refetch the products list after adding the new product
-      const updatedProducts = await axios.get('http://localhost:5000/api/products');
+      const updatedProducts = await axios.get('https://payment-gpz6.onrender.com/api/products');
       setProducts(updatedProducts.data);
     } catch (err) {
       console.error(err);
@@ -74,7 +74,7 @@ const AdminAddProduct = () => {
   const handleDelete = async (productId) => {
     try {
       // Send a DELETE request to the backend to remove the product
-      await axios.delete(`http://localhost:5000/api/products/delete/${productId}`);
+      await axios.delete(`https://payment-gpz6.onrender.com/api/products/delete/${productId}`);
       alert('Product deleted successfully!');
 
       // Remove the product from the state (local list)
@@ -128,7 +128,7 @@ const AdminAddProduct = () => {
             <div>
               <h4>{product.name}</h4>
               <p>Price:₹{product.price}</p>
-              {product.image && <img src={`http://localhost:5000${product.image}`} alt={product.name}/>}
+              {product.image && <img src={`https://payment-gpz6.onrender.com${product.image}`} alt={product.name}/>}
               <button onClick={() => handleDelete(product._id)}>Delete</button>
             </div>
           </div>
